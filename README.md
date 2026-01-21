@@ -13,13 +13,4 @@ Fixed
 
 
 HOW TO USE?
--> Click into the latest version
--> Download TamperMonkey or Firemonkey
--> Click your extension 
--> Create script
--> Paste the whole latest code
--> Click file -> Save
-   Enable permissions on Scribd
- Use it and download anything for free
-Enjoy :)
-
+https://www.youtube.com/watch?v=WlM8DZkm7F4&feature=youtu.be)
