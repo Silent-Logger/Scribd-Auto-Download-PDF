@@ -22,9 +22,8 @@
   const BUTTON_DELAY = 1500;
   const ORIGINAL_REPO = 'https://github.com/Silent-Logger/Scribd-Auto-Download-PDF';
 
-  // Tuning for lazy-load reliability
-  const PAGE_LOAD_TIMEOUT_MS = 5000;   // slightly higher to reduce misses
-  const MIN_TEXT_PER_PAGE   = 30;
+  const PAGE_LOAD_TIMEOUT_MS = 5000;
+  const MIN_TEXT_PER_PAGE = 30;
 
   const styles = `
   #sd-floating-btn {
@@ -286,10 +285,10 @@
     }
 
     return pages.filter(node => {
-      const rect  = node.getBoundingClientRect();
+      const rect = node.getBoundingClientRect();
       const style = getComputedStyle(node);
       return rect.height > 300 &&
-             rect.width  > 300 &&
+             rect.width > 300 &&
              style.display !== 'none' &&
              style.visibility !== 'hidden';
     });
@@ -498,7 +497,7 @@
 
   function closePopup() {
     const popup = q('#sd-popup');
-    const btn   = q('#sd-floating-btn');
+    const btn = q('#sd-floating-btn');
     if (popup) {
       popup.classList.remove('show');
       setTimeout(() => popup.remove(), 300);
@@ -599,7 +598,7 @@
 
       setProgress(50, '🧹 Removing toolbars...');
       await sleep(200);
-      const toolbarTop    = q('.toolbar_top');
+      const toolbarTop = q('.toolbar_top');
       const toolbarBottom = q('.toolbar_bottom');
       if (toolbarTop) toolbarTop.remove();
       if (toolbarBottom) toolbarBottom.remove();
@@ -687,5 +686,4 @@
     init();
   }
 })();
-
 
