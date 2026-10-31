@@ -4,11 +4,9 @@ Hi i'm freshlal, currently 15 years old. My discord is freshlal_real, contact me
 -It is according to version. CURRENT VERSION- **V1.3**
 Fixed
 -Faster download
--Quality management
--No more blank pages
--Faster cleanup
--Undetectable
--Risk free
+
+Current problem: EVEN PAGES and IMAGES are not loading!!
+when printing please select odd pages only for text documents like textbooks and workbooks.
 
 
 
