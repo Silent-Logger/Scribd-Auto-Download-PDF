@@ -19,7 +19,6 @@
 (function () {
   'use strict';
 
-  // ==================== CONFIG ====================
   const BUTTON_DELAY = 1500;
   const ORIGINAL_REPO = 'https://github.com/Silent-Logger/Scribd-Auto-Download-PDF';
 
@@ -27,7 +26,6 @@
   const PAGE_LOAD_TIMEOUT_MS = 5000;   // slightly higher to reduce misses
   const MIN_TEXT_PER_PAGE   = 30;
 
-  // ==================== STYLES ====================
   const styles = `
   #sd-floating-btn {
     position: fixed !important;
@@ -233,7 +231,6 @@
   styleEl.textContent = styles;
   document.head.appendChild(styleEl);
 
-  // ==================== UTILITIES ====================
   function getDocId() {
     const url = window.location.href;
     const match = url.match(/(?:document|doc|embeds|read)\/(\d+)/);
@@ -279,7 +276,6 @@
   function q(sel, root = document) { return root.querySelector(sel); }
   function qa(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
 
-  // --------- PATCH 1: safer page element detection ----------
   function getPageElements() {
     // Prefer explicit Scribd page containers
     let pages = qa('[data-page-number], .outer_page, .new_page, .page_content');
@@ -289,7 +285,6 @@
       pages = qa('.page');
     }
 
-    // Filter out tiny / hidden nodes
     return pages.filter(node => {
       const rect  = node.getBoundingClientRect();
       const style = getComputedStyle(node);
@@ -300,7 +295,6 @@
     });
   }
 
-  // --------- PATCH 2: stronger “is loaded” heuristic ----------
   function isPageLoaded(page) {
     try {
       const text = (page.innerText || '').trim();
@@ -322,7 +316,6 @@
     }
   }
 
-  // ==================== MAIN PAGE UI ====================
   function showMainButton() {
     if (q('#sd-floating-btn')) return;
     const docId = getDocId();
@@ -516,7 +509,6 @@
     }
   }
 
-  // ==================== EMBED PAGE UI ====================
   function showEmbedButton() {
     if (q('#sd-download-btn')) return;
 
@@ -639,7 +631,6 @@
         el.style.maxHeight = 'none';
       });
 
-      // --------- PATCH 3: only add page breaks to real pages ----------
       const printPages = getPageElements();
       printPages.forEach(page => {
         page.style.pageBreakAfter = 'always';
@@ -679,7 +670,6 @@
     }
   }
 
-  // ==================== INIT ====================
   function init() {
     if (!window.location.hostname.includes('scribd.com')) return;
     setTimeout(() => {
