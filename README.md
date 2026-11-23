@@ -10,5 +10,9 @@ when printing please select odd pages only for text documents like textbooks and
 
 
 
-HOW TO USE?
+=HOW TO USE?=
 https://www.youtube.com/watch?v=WlM8DZkm7F4&feature=youtu.be)
+
+=Installation guide=
+
+
